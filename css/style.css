@@ -18,9 +18,17 @@
 .global_menu ul li a {
     color: #808080;
     text-decoration: none;
+    letter-spacing: 2px;
 }
 .header_logo {
     background: url(../img/top/bg.jpg) repeat-x left top;
     padding: 20px 0;
     text-align: center;
+}
+.header_logo h1 {
+    width: 100%;
+}
+.header_logo h1 img {
+    vertical-align: center;
+    width: 15%;
 }
