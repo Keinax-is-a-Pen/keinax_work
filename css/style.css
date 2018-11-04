@@ -1,0 +1,12 @@
+/*------------TOP------------*/
+.global_menu {
+    text-align: center;
+}
+.global_menu ul {
+    width: 80%;
+}
+.global_menu ul li {
+    width: calc(100% / 5);
+    display: flex;
+    color:#808080;
+}
