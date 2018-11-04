@@ -20,7 +20,7 @@
     text-decoration: none;
 }
 .header_logo {
-    background: url(./img/top/bg.jpg) repeat-x left top;
+    background: url(../img/top/bg.jpg) repeat-x left top;
     padding: 10px 0;
     text-align: center;
 }
