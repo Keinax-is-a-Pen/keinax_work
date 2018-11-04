@@ -18,7 +18,7 @@ jobs:
       - run:
           name: Start ssh-keyscan
           command: |
-            ssh-keyscan -p 10022 ${HOST_NAME} >> ~/Circle-ci-Key-keinaxwork/known_hosts
+            ssh-keyscan -p 10022 ${HOST_NAME} >> ~/.ssh/known_hosts
  
       - deploy:
           name: Start master deploy
