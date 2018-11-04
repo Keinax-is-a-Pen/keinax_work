@@ -1,0 +1,28 @@
+# Environment variables
+# - HOST_NAME
+# - USER_NAME
+ 
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/php:7.1-browsers
+ 
+    steps:
+      - checkout
+ 
+      - add_ssh_keys:
+          fingerprints:
+            - "3d:39:05:b1:0f:f3:ba:51:ea:df:c2:53:83:be:60:f1"
+ 
+      - run:
+          name: Start ssh-keyscan
+          command: |
+            ssh-keyscan -p 10022 ${HOST_NAME} >> ~/Circle-ci-Key-keinaxwork/known_hosts
+ 
+      - deploy:
+          name: Start master deploy
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                rsync -av --delete --rsh="ssh -p 10022" --exclude='.git' --exclude='.circleci' ./ ${USER_NAME}@${HOST_NAME}:/keinax.work/public_html
+            fi
